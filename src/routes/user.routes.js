@@ -39,7 +39,7 @@ router.route("/logout").post(verifyJWT, logoutUser);
 
 router.route("/refresh-token").post(refreshAccessToken);
 
-router.route("/change-pasword").post(verifyJWT, changeCurrentPassword);
+router.route("/change-password").post(verifyJWT, changeCurrentPassword);
 
 router.route("/current-user").get(verifyJWT, getCurrentUser);
 
@@ -50,7 +50,7 @@ router
   .patch(verifyJWT, upload.single("avatar"), updateUserAvatar);
 
 router
-  .route("/cover-image")
+  .route("cover-image")
   .patch(verifyJWT, upload.single("/coverImage"), updateUserCoverImage);
 
 router.route("/c/:username").get(verifyJWT, getUserChannelProfile);
